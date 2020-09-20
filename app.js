@@ -15,9 +15,7 @@ app.use('/api/weather',weatherRoute);
 app.use('/api/posts',postRoute);
 
 app.get('/', (req,res) => {
-  res.status(200).json({"add word": "/word/add",
-                  "get all stories": "/story/allstories",
-                  "to Get specific story": "/story/{storyID}"});
+  res.status(200).json({});
 });
 
 const port = process.env.PORT || 8080;
