@@ -20,10 +20,14 @@ app.get('/', (req,res) => {
 
 const port = process.env.PORT || 8080;
 
-mongoose.connect(
-  process.env.DB_CONN,
-  {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true},
-  () => console.log('Connected to DB')
-);
+mongoose.connect(process.env.DB_CONN, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log("DB Connected..");
+}).catch((err) => {
+  console.log("Error: "+err);
+});
 
 app.listen(port);
